@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 //import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
-import Icon from 'react-native-ionicons'
+import Icon from 'react-native-vector-icons/FontAwesome5'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 posts = [
@@ -60,13 +61,15 @@ export default class App extends React.Component {
                             <Text style={styles.occupation}>{post.role}</Text>
                         </View>
 
-                        <Icon name="ios-more" size={24} color="#73788B" />
+                        <Icon name="ellipsis-v" size={24} color="#73788B" />
                     </View>
                     <Text style={styles.post}>{post.text}</Text>
-                    <Image source={post.image} style={styles.postImage} resizeMode="cover" />
-                    <View style={{ flexDirection: "row" }}>
-                        <Icon IconName="heart-outlined" size={24} color="#73788B" style={{ marginRight: 16 }} />
-                        <Icon name="ios-chatboxes" size={24} color="#73788B" />
+                    <View style={{ flexDirection: "row", paddingTop: 19}}>
+                        <Icon name="thumbs-up" size={24} color="#73788B" style={{ marginRight: 16 }} /><Text>1250</Text>
+                        <Icon name="comment-dots" size={24} color="#73788B" style={{ paddingLeft: 70 }} /><Text>50</Text>
+                        <Icon name="share-square" size={24} color="#73788B" style={{ paddingLeft: 70 }} />
+                        
+
                     </View>
                 </View>
             </View>
