@@ -27,7 +27,7 @@ const tag = [
     },
     {
         id: '6',
-        name: "General",
+        name: "Illness",
         number: '5'
     }
 ]

@@ -23,12 +23,6 @@ export default class Tags extends React.Component {
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false}
                 ></FlatList>
-                <TouchableOpacity
-                    activeOpacity={0.7}
-                    //onPress={clickHandler}
-                    style={styles.touchableOpacityStyle}>
-                    <Editform style={styles.edit}/>
-                </TouchableOpacity>
             </View>
         );
     }

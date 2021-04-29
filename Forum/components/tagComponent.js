@@ -29,10 +29,12 @@ const styles = StyleSheet.create({
     tag: {
         flexDirection: "row",
         justifyContent: 'space-between',
-        marginBottom: 4,
-        backgroundColor: '#EBECF4',
-        padding: 10,
+        marginBottom: 9,
+        backgroundColor: '#19A5B0',
+        padding: 25,
         width: 300,
+        margin: 0,
+        borderRadius: 7
     }
 })
 
