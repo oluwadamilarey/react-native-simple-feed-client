@@ -1,128 +1,89 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, StatusBar, Image, FlatList, TouchableOpacity } from "react-native";
 //import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Editform from '../../assets/icons/NewPost.svg';
 import Comment from '../../assets/icons/comment.svg';
 import Thumbup from '../../assets/icons/thumbup.svg';
 import Share from '../../assets/icons/share.svg';
 import More from '../../assets/icons/morevertical.svg';
-import posts from '../../Forum/api/post.js'
-import postComponent from '../components/postComponent'
+import posts from '../../Forum/api/post.js';
+import postComponent from '../components/postComponent';
+import TobTab from '../../navigation/topTab';
+import Feeds from '../../Forum/screens/ForumScreen/feed';
+import {createAppContainer} from 'react-navigation'; 
+import Search from '../../assets/icons/search.svg';
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
+import Filter from '../../assets/icons/filter.svg';
+import Notifications from '../../assets/icons/Notification.svg';
+
+
+
 
 export default class Feed extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.headerTitle}>Feed</Text>
-                </View>
+        <View style={styles.container} >  
+            <View style={styles.header}>
+                <Text style={styles.headerTitle}>Forum</Text>
+                <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+                    <View style={styles.item}>
+                        <TouchableOpacity>
+                            <Search/>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.item}> 
+                        <TouchableOpacity>
+                            <Filter/>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.item}>
+                        <TouchableOpacity>
+                            <Notifications/>
+                        </TouchableOpacity>
+                    </View>
 
-                <FlatList
-                    style={styles.feed}
-                    data={posts}
-                    renderItem={({ item }) => postComponent(item)}
-                    keyExtractor={item => item.id}
-                    showsVerticalScrollIndicator={false}
-                ></FlatList>
-                <TouchableOpacity
-                    activeOpacity={0.7}
-                    //onPress={clickHandler}
-                    style={styles.touchableOpacityStyle}>
-                    <Editform style={styles.edit}/>
-                </TouchableOpacity>''
+                </View>
             </View>
+            <TobTab/>
+        </View>
         );
     }
 }
 
-const styles = StyleSheet.create({
+
+const styles = StyleSheet.create({  
     container: {
         flex: 1,
-        backgroundColor: "#EBECF4"
+        backgroundColor: "#F8F8F8"
     },
     header: {
-        paddingTop: 64,
-        paddingBottom: 16,
+        flexDirection: 'row',
+        paddingTop: 15,
+        paddingBottom: 26,
         backgroundColor: "#FFF",
         alignItems: "center",
-        justifyContent: "center",
-        borderBottomWidth: 1,
+        justifyContent: "space-between",
         borderBottomColor: "#EBECF4",
         shadowColor: "#454D65",
         shadowOffset: { height: 5 },
         shadowRadius: 15,
         shadowOpacity: 0.2,
         zIndex: 10
-    },
-    edit: {
-        // shadowColor: "#FFA500",
-        // shadowOffset: { height: 12 },
-        // shadowOpacity: 0.2,
+    }, 
+    item: {
+        flexGrow: 0, flexShrink: 0, flexBasis: '10%'
     },
     headerTitle: {
-        fontSize: 20,
-        fontWeight: "500"
-    },
-    feed: {
-        marginHorizontal: 16
-    },
-    feedItem: {
-        backgroundColor: "#FFF",
-        borderRadius: 5,
-        padding: 8,
-        flexDirection: "row",
-        marginVertical: 8
-    },
-    avatar: {
-        width: 36,
-        height: 36,
-        borderRadius: 18,
-        marginRight: 16
-    },
-    name: {
-        fontSize: 15,
-        fontWeight: "500",
-        color: "#454D65"
-    },
-    timestamp: {
-        fontSize: 14,
-        color: "#C4C6CE",
-        marginTop: 4,
-        paddingRight: 4
-    },
-    occupation: {
-        fontSize: 14,
-        color: "#C4C6CE",
-        marginTop: 5,
-        paddingLeft: 3,
-    },
-    post: {
-        marginTop: 9,
-        fontSize: 14,
-        color: "#838899"
-    },
-    postImage: {
-        width: undefined,
-        height: 150,
-        borderRadius: 5,
-        marginVertical: 16
-    },
-    floatingButtonStyle: {
-        
-        width: 50,
-        height: 50,
-        //backgroundColor:'black'
-    },
-    touchableOpacityStyle: {
-        position: 'absolute',
-        width: 50,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        right: 30,
-        bottom: 30,
-      },
-});
+       width: 90,
+       height: 41,
+       fontSize: 30,
+       lineHeight: 41,
+       color: '#25282B',
+       flexGrow: 0, flexShrink: 0, flexBasis: '70%',
+       fontWeight: 'bold',
+       paddingLeft: 30
+    }
+});  
