@@ -22,6 +22,7 @@ const TopTabs = () => {
         },
         style: {
             backgroundColor: '#ffffff',
+            elevation: 0
         }
         
     }}>

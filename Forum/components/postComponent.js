@@ -13,15 +13,26 @@ const postComponent = (post) => {
     return(
        <View>
            <View style={styles.feedItem}>
-                <Image source={post.avatar} style={styles.avatar} />
+                
                 <View style={{ flex: 1 }}>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingBottom: 9, borderBottomColor: "#73788B", borderBottomWidth: 1}}>
+                
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingBottom: 7, borderBottomColor: "#73788B", borderBottomWidth: 1}}>
+                        
                         <View>
-                            <Text style={styles.name}>{post.name}</Text>
+                            
                             <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                                <Text style={styles.timestamp}>{moment(post.timestamp).fromNow()}</Text>
-                                <Text style={{fontWeight: '900',fontSize: 23, margin: -1}}>.</Text>
-                                <Text style={styles.occupation}>{post.role}</Text>
+                                <Image source={post.avatar} style={styles.avatar} />
+                                <View style={{flexDirection: 'column'}}>
+                                    <Text style={styles.name}>{post.name}</Text>
+                                    <View style={{flexDirection: 'row'}}>
+                                        <Text style={styles.timestamp}>{moment(post.timestamp).fromNow()}</Text>
+                                        <Text style={{fontWeight: '900',fontSize: 23, margin: -3,top: -3, paddingHorizontal: 4, fontWeight: 'bold'}}>.</Text>
+                                        <Text style={styles.occupation}>{post.role}</Text>
+                                    </View>
+                                </View>
+                                    
+                                
+                                {/* {post.role ? <Text></Text> : <Text></Text>} */}
                             </View>
                         </View>
                         <TouchableOpacity>
