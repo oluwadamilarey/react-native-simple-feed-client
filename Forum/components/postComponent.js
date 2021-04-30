@@ -16,7 +16,7 @@ const postComponent = (post) => {
                 
                 <View style={{ flex: 1 }}>
                 
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingBottom: 7, borderBottomColor: "#73788B", borderBottomWidth: 1}}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingBottom: 7, borderBottomColor: "#E8E8E8", borderBottomWidth: 1}}>
                         
                         <View>
                             
@@ -42,9 +42,9 @@ const postComponent = (post) => {
                     <Text style={{fontWeight: "700", marginTop: 12}}>{post.title}</Text>
                     <Text style={styles.post}>{post.text}</Text>
                     <View style={{flexDirection: "row", justifyContent: "space-between", width: 100,marginTop: 5}}>
-                        <View style={{ flexDirection: 'row',backgroundColor: '#FFA500',  borderRadius: 9, paddingHorizontal: 7}}>
-                          <Icon name="tag" style={{padding: 4}}/>
-                          <Text>
+                        <View style={{ flexDirection: 'row',backgroundColor: '#FFA500',  borderRadius: 9, paddingHorizontal: 10}}>
+                          <Icon name="tag" style={{padding: 4, color: "#ffffff"}}/>
+                          <Text style={{color: "#ffffff"}}>
                            {post.tag}
                           </Text>
                         </View>

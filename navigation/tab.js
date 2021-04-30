@@ -19,7 +19,7 @@ const Tabs = () => {
         tabBarOptions={{
             showLabel: false,
             style: {
-                position: 'absolute',
+                position: 'relative',
                 bottom: 0,
                 left: 1,
                 right: 1,
